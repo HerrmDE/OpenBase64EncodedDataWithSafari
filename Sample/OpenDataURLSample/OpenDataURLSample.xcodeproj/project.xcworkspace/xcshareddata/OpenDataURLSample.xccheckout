@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>3E4F3386-22B2-4C42-9DB9-C3D93CBD2E56</string>
+	<key>IDESourceControlProjectName</key>
+	<string>OpenDataURLSample</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>5C09C0FD-9764-457E-9A09-DEE9822C3D6F</key>
+		<string>https://github.com/HerrmDE/OpenBase64EncodedDataWithSafari.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Sample/OpenDataURLSample/OpenDataURLSample.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>5C09C0FD-9764-457E-9A09-DEE9822C3D6F</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/HerrmDE/OpenBase64EncodedDataWithSafari.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>5C09C0FD-9764-457E-9A09-DEE9822C3D6F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>5C09C0FD-9764-457E-9A09-DEE9822C3D6F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>OpenBase64EncodedDataWithSafari</string>
+		</dict>
+	</array>
+</dict>
+</plist>
