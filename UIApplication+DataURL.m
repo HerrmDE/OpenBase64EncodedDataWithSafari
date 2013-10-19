@@ -12,8 +12,8 @@
 #import "DDLog.h"
 
 static const int ddLogLevel = LOG_LEVEL_VERBOSE;
-static const int CHEPort = 33654;
-static const HTTPServer *httpServer;
+static const int chePort = 33654;
+static const HTTPServer *cheHTTPServer;
 
 @implementation UIApplication (DataURL)
 
@@ -21,30 +21,30 @@ static const HTTPServer *httpServer;
 {
 	[DDLog addLogger:[DDTTYLogger sharedInstance]];
 	
-	httpServer = [[HTTPServer alloc] init];
-	[httpServer setType:@"_http._tcp."];
-	[httpServer setPort:CHEPort];
+	cheHTTPServer = [[HTTPServer alloc] init];
+	[cheHTTPServer setType:@"_http._tcp."];
+	[cheHTTPServer setPort:CHEPort];
 	
 	//Setting document root to documents folder
 	NSString *documentRoot = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:@"Web"];
 	[[NSFileManager defaultManager] createDirectoryAtPath:documentRoot withIntermediateDirectories:YES attributes:nil error:nil];
-	[httpServer setDocumentRoot:documentRoot];
+	[cheHTTPServer setDocumentRoot:documentRoot];
 	
 	//Creating index.html which redirects to the data url
-	NSString* fileAtPath = [httpServer.documentRoot stringByAppendingPathComponent:@"index.html"];
+	NSString* fileAtPath = [cheHTTPServer.documentRoot stringByAppendingPathComponent:@"index.html"];
 	[[NSFileManager defaultManager] createFileAtPath:fileAtPath contents:nil attributes:nil];
 	
 	NSString *indexHTMLString = [NSString stringWithFormat:@"<head><meta http-equiv=\"refresh\" content=\"0; URL=data:text/html;charset=UTF-8;base64,%@\"></head>", contentString];
 	[[indexHTMLString dataUsingEncoding:NSUTF8StringEncoding] writeToFile:fileAtPath atomically:NO];
 	
 	NSError *error;
-	if (![httpServer start:&error])
+	if (![cheHTTPServer start:&error])
 	{
 		DDLogError(@"Error starting HTTP Server: %@", error);
 	}
 	
 	//Starting web server
-    NSString* server = [NSString stringWithFormat:@"http://localhost:%hu", httpServer.listeningPort];
+    NSString* server = [NSString stringWithFormat:@"http://localhost:%hu", cheHTTPServer.listeningPort];
     NSURL *myURL = [NSURL URLWithString: [NSString stringWithFormat: @"%@", server]];
     [[UIApplication sharedApplication] openURL:myURL];
 	
