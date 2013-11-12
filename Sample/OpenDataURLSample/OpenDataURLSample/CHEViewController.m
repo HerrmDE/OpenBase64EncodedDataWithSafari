@@ -7,13 +7,16 @@
 //
 
 #import "CHEViewController.h"
-#import "UIApplication+DataURL.h"
+#import "CHEDataURLHandler.h"
 
 @interface CHEViewController ()
 
 @end
 
 @implementation CHEViewController
+{
+	CHEDataURLHandler *dataURLHandler;
+}
 
 - (void)viewDidLoad
 {
@@ -32,7 +35,8 @@
 	NSString *contentString = [NSString stringWithFormat:@"<html>%@</html>", self.textField.text];
 	NSString *contentStringBase64Encoded = [[contentString dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:0];
 	
-	[[UIApplication sharedApplication] openBase64EncodedContent:contentStringBase64Encoded];
+	dataURLHandler = [[CHEDataURLHandler alloc] init];
+	[dataURLHandler openBase64EncodedContent:contentStringBase64Encoded];
 }
 
 @end

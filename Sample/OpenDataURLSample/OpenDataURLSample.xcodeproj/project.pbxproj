@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA1D1F1D1832CD4F001EF850 /* CHEDataURLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1D1F1C1832CD4F001EF850 /* CHEDataURLHandler.m */; };
 		AA5B353F1813372200693A84 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA5B353E1813372200693A84 /* Foundation.framework */; };
 		AA5B35411813372200693A84 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA5B35401813372200693A84 /* CoreGraphics.framework */; };
 		AA5B35431813372200693A84 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA5B35421813372200693A84 /* UIKit.framework */; };
@@ -21,7 +22,6 @@
 		AA5B35601813372200693A84 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA5B35421813372200693A84 /* UIKit.framework */; };
 		AA5B35681813372200693A84 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA5B35661813372200693A84 /* InfoPlist.strings */; };
 		AA5B356A1813372200693A84 /* OpenDataURLSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5B35691813372200693A84 /* OpenDataURLSampleTests.m */; };
-		AA5B35C21813381F00693A84 /* UIApplication+DataURL.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5B35741813381E00693A84 /* UIApplication+DataURL.m */; };
 		AA5B35C31813381F00693A84 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = AA5B35771813381E00693A84 /* .gitignore */; };
 		AA5B35C41813381F00693A84 /* .hgignore in Resources */ = {isa = PBXBuildFile; fileRef = AA5B35781813381E00693A84 /* .hgignore */; };
 		AA5B35C51813381F00693A84 /* DDData.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5B357C1813381E00693A84 /* DDData.m */; };
@@ -71,6 +71,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA1D1F1B1832CD4F001EF850 /* CHEDataURLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CHEDataURLHandler.h; path = ../../../CHEDataURLHandler.h; sourceTree = "<group>"; };
+		AA1D1F1C1832CD4F001EF850 /* CHEDataURLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CHEDataURLHandler.m; path = ../../../CHEDataURLHandler.m; sourceTree = "<group>"; };
 		AA5B353B1813372200693A84 /* OpenDataURLSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenDataURLSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA5B353E1813372200693A84 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AA5B35401813372200693A84 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -82,16 +84,14 @@
 		AA5B354D1813372200693A84 /* CHEAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHEAppDelegate.h; sourceTree = "<group>"; };
 		AA5B354E1813372200693A84 /* CHEAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHEAppDelegate.m; sourceTree = "<group>"; };
 		AA5B35511813372200693A84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AA5B35531813372200693A84 /* CHEViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHEViewController.h; sourceTree = "<group>"; };
-		AA5B35541813372200693A84 /* CHEViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHEViewController.m; sourceTree = "<group>"; };
+		AA5B35531813372200693A84 /* CHEViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CHEViewController.h; path = OpenDataURLSample/CHEViewController.h; sourceTree = "<group>"; };
+		AA5B35541813372200693A84 /* CHEViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CHEViewController.m; path = OpenDataURLSample/CHEViewController.m; sourceTree = "<group>"; };
 		AA5B35561813372200693A84 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AA5B355C1813372200693A84 /* OpenDataURLSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenDataURLSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA5B355D1813372200693A84 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		AA5B35651813372200693A84 /* OpenDataURLSampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OpenDataURLSampleTests-Info.plist"; sourceTree = "<group>"; };
 		AA5B35671813372200693A84 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AA5B35691813372200693A84 /* OpenDataURLSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenDataURLSampleTests.m; sourceTree = "<group>"; };
-		AA5B35731813381E00693A84 /* UIApplication+DataURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIApplication+DataURL.h"; path = "../../../UIApplication+DataURL.h"; sourceTree = "<group>"; };
-		AA5B35741813381E00693A84 /* UIApplication+DataURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+DataURL.m"; path = "../../../UIApplication+DataURL.m"; sourceTree = "<group>"; };
 		AA5B35771813381E00693A84 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		AA5B35781813381E00693A84 /* .hgignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .hgignore; sourceTree = "<group>"; };
 		AA5B357B1813381E00693A84 /* DDData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDData.h; sourceTree = "<group>"; };
@@ -185,6 +185,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA1D1F191832CCB2001EF850 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AA5B35561813372200693A84 /* Images.xcassets */,
+				AA5B35501813372200693A84 /* Main.storyboard */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		AA1D1F1A1832CCED001EF850 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				AA5B35531813372200693A84 /* CHEViewController.h */,
+				AA5B35541813372200693A84 /* CHEViewController.m */,
+			);
+			name = UI;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		AA5B35321813372200693A84 = {
 			isa = PBXGroup;
 			children = (
@@ -219,15 +238,13 @@
 		AA5B35441813372200693A84 /* OpenDataURLSample */ = {
 			isa = PBXGroup;
 			children = (
-				AA5B35731813381E00693A84 /* UIApplication+DataURL.h */,
-				AA5B35741813381E00693A84 /* UIApplication+DataURL.m */,
-				AA5B35751813381E00693A84 /* Vendor */,
 				AA5B354D1813372200693A84 /* CHEAppDelegate.h */,
 				AA5B354E1813372200693A84 /* CHEAppDelegate.m */,
-				AA5B35501813372200693A84 /* Main.storyboard */,
-				AA5B35531813372200693A84 /* CHEViewController.h */,
-				AA5B35541813372200693A84 /* CHEViewController.m */,
-				AA5B35561813372200693A84 /* Images.xcassets */,
+				AA1D1F1B1832CD4F001EF850 /* CHEDataURLHandler.h */,
+				AA1D1F1C1832CD4F001EF850 /* CHEDataURLHandler.m */,
+				AA5B35751813381E00693A84 /* Vendor */,
+				AA1D1F1A1832CCED001EF850 /* UI */,
+				AA1D1F191832CCB2001EF850 /* Resources */,
 				AA5B35451813372200693A84 /* Supporting Files */,
 			);
 			path = OpenDataURLSample;
@@ -530,8 +547,8 @@
 			files = (
 				AA5B35D31813381F00693A84 /* HTTPRedirectResponse.m in Sources */,
 				AA5B35E41813381F00693A84 /* DispatchQueueLogFormatter.m in Sources */,
+				AA1D1F1D1832CD4F001EF850 /* CHEDataURLHandler.m in Sources */,
 				AA5B35D41813381F00693A84 /* WebSocket.m in Sources */,
-				AA5B35C21813381F00693A84 /* UIApplication+DataURL.m in Sources */,
 				AA5B35D71813381F00693A84 /* DELETEResponse.m in Sources */,
 				AA5B35C91813381F00693A84 /* HTTPConnection.m in Sources */,
 				AA5B35D61813381F00693A84 /* DAVResponse.m in Sources */,
@@ -778,6 +795,7 @@
 				AA5B356F1813372200693A84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AA5B35701813372200693A84 /* Build configuration list for PBXNativeTarget "OpenDataURLSampleTests" */ = {
 			isa = XCConfigurationList;
@@ -786,6 +804,7 @@
 				AA5B35721813372200693A84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
