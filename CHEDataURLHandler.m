@@ -15,9 +15,8 @@
 @implementation CHEDataURLHandler
 {
 	HTTPServer *httpServer;
+	NSString *documentRoot;
 }
-
-static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 - (BOOL)openBase64EncodedContent:(NSString *)contentString
 {
@@ -28,21 +27,25 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 	[httpServer setPort:33664];
 	
 	//Creating document root at documents folder
-	NSString *documentRoot = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:@"Web"];
-	[[NSFileManager defaultManager] createDirectoryAtPath:documentRoot withIntermediateDirectories:YES attributes:nil error:nil];
+	NSFileManager *fileManager = [NSFileManager defaultManager];
+	documentRoot = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:@"Web"];
+	
+	if (![fileManager fileExistsAtPath:documentRoot]) {
+		[fileManager createDirectoryAtPath:documentRoot withIntermediateDirectories:YES attributes:nil error:nil];
+	}
+	
 	[httpServer setDocumentRoot:documentRoot];
 	
 	//Creating index.html with redirect to data url
-	NSString *fileAtPath = [httpServer.documentRoot stringByAppendingPathComponent:@"index.html"];
-	[[NSFileManager defaultManager] createFileAtPath:fileAtPath contents:nil attributes:nil];
+	NSString *indexFile = [httpServer.documentRoot stringByAppendingPathComponent:@"index.html"];
+	[fileManager createFileAtPath:indexFile contents:nil attributes:nil];
 	
 	NSString *indexHTMLString = [NSString stringWithFormat:@"<head><meta http-equiv=\"refresh\" content=\"0; URL=data:text/html;charset=UTF-8;base64,%@\"></head>", contentString];
-	[[indexHTMLString dataUsingEncoding:NSUTF8StringEncoding] writeToFile:fileAtPath atomically:NO];
+	[[indexHTMLString dataUsingEncoding:NSUTF8StringEncoding] writeToFile:indexFile atomically:NO];
 	
 	NSError *error;
-	if (![httpServer start:&error])
-	{
-		DDLogError(@"Error starting HTTP Server: %@", error);
+	if (![httpServer start:&error]) {
+		NSLog(@"Error starting HTTP Server: %@", error);
 	}
 	
 	//Starting web server
@@ -51,6 +54,20 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 	[[UIApplication sharedApplication] openURL:myURL];
 	
 	return [[UIApplication sharedApplication] openURL:myURL];;
+}
+
+- (void)dealloc
+{
+	NSFileManager *fileManager = [NSFileManager defaultManager];
+	
+	if ([fileManager fileExistsAtPath:documentRoot]) {
+		NSError *error;
+		[fileManager removeItemAtPath:documentRoot error:&error];
+		
+		if (error) {
+			NSLog(@"Error while removing document root directory: %@", error);
+		}
+	}
 }
 
 @end
