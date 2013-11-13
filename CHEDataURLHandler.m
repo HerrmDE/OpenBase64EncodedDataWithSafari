@@ -8,9 +8,6 @@
 
 #import "CHEDataURLHandler.h"
 #import "HTTPServer.h"
-#import "DDTTYLogger.h"
-#import "DDLog.h"
-
 
 @implementation CHEDataURLHandler
 {
@@ -19,9 +16,7 @@
 }
 
 - (BOOL)openBase64EncodedContent:(NSString *)contentString
-{
-	[DDLog addLogger:[DDTTYLogger sharedInstance]];
-	
+{	
 	httpServer = [[HTTPServer alloc] init];
 	[httpServer setType:@"_http._tcp."];
 	[httpServer setPort:33664];
