@@ -33,7 +33,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 	[httpServer setDocumentRoot:documentRoot];
 	
 	//Creating index.html with redirect to data url
-	NSString* fileAtPath = [httpServer.documentRoot stringByAppendingPathComponent:@"index.html"];
+	NSString *fileAtPath = [httpServer.documentRoot stringByAppendingPathComponent:@"index.html"];
 	[[NSFileManager defaultManager] createFileAtPath:fileAtPath contents:nil attributes:nil];
 	
 	NSString *indexHTMLString = [NSString stringWithFormat:@"<head><meta http-equiv=\"refresh\" content=\"0; URL=data:text/html;charset=UTF-8;base64,%@\"></head>", contentString];
@@ -46,7 +46,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 	}
 	
 	//Starting web server
-	NSString* server = [NSString stringWithFormat:@"http://localhost:%hu", httpServer.listeningPort];
+	NSString *server = [NSString stringWithFormat:@"http://localhost:%hu", httpServer.listeningPort];
 	NSURL *myURL = [NSURL URLWithString: [NSString stringWithFormat: @"%@", server]];
 	[[UIApplication sharedApplication] openURL:myURL];
 	
