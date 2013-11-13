@@ -16,7 +16,7 @@
 }
 
 - (BOOL)openBase64EncodedContent:(NSString *)contentString
-{	
+{
 	httpServer = [[HTTPServer alloc] init];
 	[httpServer setType:@"_http._tcp."];
 	[httpServer setPort:33664];
@@ -63,6 +63,9 @@
 			NSLog(@"Error while removing document root directory: %@", error);
 		}
 	}
+	
+	if ([httpServer isRunning])
+		[httpServer stop];
 }
 
 @end
